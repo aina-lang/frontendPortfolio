@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+
+body {
+  /* Hide both vertical and horizontal scrollbars */
+  overflow: hidden;
+}
+
+/* Optionally, you can hide the scrollbar for a specific axis */
+
+/* Hide vertical scrollbar */
+body::-webkit-scrollbar {
+  width: 0.5rem; /* Adjust this value if needed */
+  display: none;
+}
+
+/* Hide horizontal scrollbar */
+body::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Base styles for the section */
+.section {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 30px;
+  color: white;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: orange;
+  box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+}
+.cursor:before {
+  content: " ";
+  position: absolute;
+ width: 50px;
+   height: 50px; 
+   opacity: 0.2;
+   /*top: 50%;
+  left: 50%; */
+transform: translate(-30%, -30%);
+  border-radius: 50%;
+  background-color: rgba(255, 165, 0, 0.5);
+  animation: blinkAnimation 1s infinite; /* Add the animation */
+}
+
+@keyframes blinkAnimation {
+  0% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.active {
+  background-color: #fb923c;
+  color: white;
+  border-radius: 100%;
+}
+
+.bg-about {
+  background-image: url("./assets/aina.png");
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  /* For screens with a width of 768 pixels or less */
+  .section {
+    flex-direction: column;
+    text-align: center;
+    height: auto; /* Adjust height to fit content */
+    padding: 20px;
+  }
+}
+
+/* Additional responsive styles for even smaller screens (optional) */
+@media (max-width: 480px) {
+  /* For screens with a width of 480 pixels or less */
+  .section {
+    font-size: 16px; /* Reduce font size for better readability */
+  }
+}
