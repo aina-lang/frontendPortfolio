@@ -9,7 +9,7 @@ export default function Contact() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://backendportolio.vercel.app/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
