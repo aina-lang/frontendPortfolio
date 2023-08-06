@@ -1,33 +1,94 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import axios from "axios"; // Importez Axios
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [msgHandle, setmsgHandle] = useState(true);
+
+  // useEffect(() => {
+  //   setLoading(false);
+  // }, []);
+
+  // const onSubmit1 = async (data) => {
+  //   alert(data)
+  //   try {
+  //     const response = await axios.post(
+  //       "http://127.0.0.1:8000/api/",
+  //       data,
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+
+  //     console.log("====================================");
+  //     console.log(response);
+  //     console.log("====================================");
+  //     alert("")
+  //     if (response.status === 200) {
+  //       alert("Message sent successfully!");
+  //       setName("");
+  //       setEmail("");
+  //       setMessage("");
+  //     } else {
+  //       alert("Error sending the message. Mias connecter a API.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error sending the message:", error);
+  //     alert("Error sending the message. Please try again later.");
+  //   }
+  // };
+
+  // const onSubmit=()=>{
+  //   axios
+  //     .get('http://localhost:8000/')
+  //     .then((response) => {
+  //    alert(response.data)
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+
+  //     });
+  // }
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('https://backendportolio.vercel.app/', {
-        method: 'POST',
+      const response = await fetch("https://backendportfolio.vercel.app/", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
 
+      // setLoading(true);
+
       if (response.ok) {
-        alert('Message sent successfully!');
-        setName("");
-        setEmail("");
-        setMessage("");
+        console.log("====================================");
+        console.log("E-mail envoyé avec succés");
+        console.log("====================================");
+        // setmsgHandle(true);
+        // setLoading(false);
+        // setName("");
+        // setEmail("");
+        // setMessage("");
       } else {
-        alert('Error sending the message. Please try again later.');
+        console.log("====================================");
+        console.log("Erreur lors de l'envoie de l'email ", response);
+        console.log("====================================");
       }
+      // setLoading(false);
     } catch (error) {
-      console.error('Error sending the message:', error);
-      alert('Error sending the message. Please try again later.');
+      console.log("====================================");
+      console.error(error.message);
+      console.log("====================================");
+      // setLoading(false);
     }
   };
 
@@ -47,19 +108,7 @@ export default function Contact() {
     threshold: 0.5,
   });
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handleMessageChange = (event) => {
-    setMessage(event.target.value);
-  };
-
-  const handleClick = () => {
+  const handleClick = (e) => {
     const formData = {
       name: name,
       email: email,
@@ -67,11 +116,15 @@ export default function Contact() {
     };
 
     onSubmit(formData);
+    e.preventDefault();
   };
 
-
   return (
-    <section id="contact" className="section min-h-screen  flex flex-col lg:flex-row items-center bg-[#2F4858]">
+    <section
+      id="contact"
+      className="section min-h-screen  flex flex-col lg:flex-row items-center bg-[#2F4858]"
+    >
+      {loading ? <div>loading ... </div> : null}
       <div className="container mx-auto lg:px-36 lg:pt-30">
         <div className="flex flex-row items-center justify-center lg:justify-between">
           <div>

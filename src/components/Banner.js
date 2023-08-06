@@ -30,7 +30,7 @@ export default function Banner() {
   return (
     <section
       id="home"
-      className="section min-h-screen lg:min-h-[78vh] flex flex-col lg:flex-row items-center bg-[#4A577E]"
+      className="section min-h-screen lg:min-h-[78vh] flex flex-col lg:flex-row items-center bg-[#2F4858]"
     >
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-8 lg:flex-row lg:items-center lg:gap-x-12">
@@ -40,7 +40,7 @@ export default function Banner() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.4 }}
-              className="mb-4 text-center text-[32px] lg:text-left lg:text-[36px] font-secondary font-semibold uppercase leading-[1]"
+              className="mb-4 text-center text-[32px] lg:text-left lg:text-[30px] font-secondary font-semibold uppercase leading-[1]"
             >
               RAFANDEFERANA{" "}
               <span className="text-orange-400 ">MAMINIAINA MERCIA</span>

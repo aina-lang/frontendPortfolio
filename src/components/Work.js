@@ -60,9 +60,9 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="section min-h-screen lg:min-h-[78vh] flex flex-col lg:flex-row items-center bg-[#485A73]"
+      className="section min-h-screen lg:min-h-[78vh] flex flex-col lg:flex-row items-center bg-[#2F4858]"
     >
-      <div className="container mx-auto p-40">
+      <div className="container mx-auto lg:p-40">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ export default function Work() {
             ))
           )}
         </div>
-        <div className="flex  mt-20 items-center justify-center space-x-4">
+        <div className="flex  mt-20 items-center  justify-center space-x-4 ">
           <motion.div
             whileHover={{ scale: 1.2, rotate: 360, color: "#61DBFB" }}
             transition={{ duration: 0.5 }}

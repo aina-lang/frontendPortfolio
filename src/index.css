@@ -6,20 +6,24 @@
 
 body {
   /* Hide both vertical and horizontal scrollbars */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 /* Optionally, you can hide the scrollbar for a specific axis */
 
 /* Hide vertical scrollbar */
 body::-webkit-scrollbar {
-  width: 0.5rem; /* Adjust this value if needed */
-  display: none;
+  /* width: 10px; Adjust this value if needed */
+  /* background-color: #dd1616;
+  height: 50px; */
+  /* display: none; */
 }
 
 /* Hide horizontal scrollbar */
 body::-webkit-scrollbar-track {
-  display: none;
+  /* display: none; */
+  /* width: 10px;  */
+  
 }
 
 /* Base styles for the section */

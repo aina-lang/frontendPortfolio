@@ -6,9 +6,11 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Services from "./components/Services";
 import Work from "./components/Work";
+import Footer from "./components/Footer";
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
 
   const handleMouseMove = (e) => {
     setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -16,15 +18,13 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
-
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header />
       <Banner />
       <Nav />
@@ -32,7 +32,11 @@ function App() {
       <Services />
       <Work />
       <Contact />
-      <div  style={{ top: cursorPosition.y, left: cursorPosition.x }} className="cursor bg-orange-400 w-[20px] h-[20px] rounded-full shadow-lg "/>
+      {/* <Footer/> */}
+      <div
+        style={{ top: cursorPosition.y, left: cursorPosition.x }}
+        className="cursor bg-orange-400 w-[20px] h-[20px] rounded-full shadow-lg "
+      />
     </div>
   );
 }

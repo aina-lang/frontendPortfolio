@@ -12,7 +12,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="section bg-[#4C8077] min-h-screen lg:min-h-[78vh] py-10 md:py-20 lg:py-32"
+      className="section bg-[#2F4858] min-h-screen lg:min-h-[78vh] py-10 md:py-20 lg:py-32"
       ref={ref}
     >
       <div className="container mx-auto">

@@ -27,7 +27,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="section min-h-screen lg:min-h-[78vh] bg-[#F26C6C] md:py-20 lg:py-32"
+      className="section min-h-screen lg:min-h-[78vh] bg-[#2F4858] md:py-20 lg:py-32"
     >
       <div className="container mx-auto lg:p-36">
         <motion.div
