@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-track {
   /* display: none; */
   /* width: 10px;  */
-  
+
 }
 
 /* Base styles for the section */
@@ -44,37 +44,56 @@ body::-webkit-scrollbar-track {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: orange;
+
   box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
 }
+
 .cursor:before {
   content: " ";
   position: absolute;
- width: 50px;
-   height: 50px; 
-   opacity: 0.2;
-   /*top: 50%;
+  width: 50px;
+  height: 50px;
+  opacity: 0.2;
+  /*top: 50%;
   left: 50%; */
-transform: translate(-30%, -30%);
+  transform: translate(-30%, -30%);
   border-radius: 50%;
   background-color: rgba(255, 165, 0, 0.5);
-  animation: blinkAnimation 1s infinite; /* Add the animation */
+  animation: blinkAnimation 1s infinite;
+  /* Add the animation */
 }
 
 @keyframes blinkAnimation {
   0% {
     opacity: 0.2;
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 0.2;
   }
 }
 
+
+
+
+.bg-gray-grain {
+
+  background-image: linear-gradient(135deg, #dedfe7 25%, transparent 25%), linear-gradient(225deg, #dedfe7 25%, transparent 25%), linear-gradient(45deg, #dedfe7 25%, transparent 25%), linear-gradient(315deg, #dedfe7 25%, #e5e5f7 25%);
+  background-size: 4px 4px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+#header{
+  position: fixed;
+  top: 0;
+}
+
 .active {
-  background-color: #fb923c;
+  background-color: #6366f1;
   color: white;
   border-radius: 100%;
 }
@@ -83,21 +102,66 @@ transform: translate(-30%, -30%);
   background-image: url("./assets/aina.png");
 }
 
+
+
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
+
   /* For screens with a width of 768 pixels or less */
   .section {
     flex-direction: column;
     text-align: center;
-    height: auto; /* Adjust height to fit content */
+    height: auto;
+    /* Adjust height to fit content */
     padding: 20px;
   }
 }
 
 /* Additional responsive styles for even smaller screens (optional) */
 @media (max-width: 480px) {
+
   /* For screens with a width of 480 pixels or less */
   .section {
-    font-size: 16px; /* Reduce font size for better readability */
+    font-size: 16px;
+    /* Reduce font size for better readability */
+  }
+}
+
+
+@media screen and (max-width:1023px) {
+  #home {
+    /* background-image: url("./assets/aina.png"); */
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 80%;
+
+  }
+
+  #imgBanner{
+    display: none;
+  }
+
+  #imgBannerContainer{
+    display: none;
+  }
+  #bannerContent{
+    margin-top: 80px;
+  }
+
+}
+
+@media screen  and (max-width:450px){
+
+ 
+  #navBottom{
+    display: none;
+  }
+  
+  #navCollapaseHumberger{
+    display: block;
+  }
+  #navCollapase{
+    display: flex;
+
   }
 }

@@ -122,7 +122,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="section min-h-screen  flex flex-col lg:flex-row items-center bg-[#2F4858]"
+      className="section min-h-screen  flex flex-col lg:flex-row items-center "
     >
       {loading ? <div>loading ... </div> : null}
       <div className="container mx-auto lg:px-36 lg:pt-30">

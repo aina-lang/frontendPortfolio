@@ -24,7 +24,7 @@ function App() {
   }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-gray-100 bg-gray-grain z-50" >
       <Header />
       <Banner />
       <Nav />

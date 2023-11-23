@@ -60,7 +60,7 @@ export default function Work() {
   return (
     <section
       id="work"
-      className="section min-h-screen lg:min-h-[78vh] flex flex-col lg:flex-row items-center bg-[#2F4858]"
+      className="section min-h-screen lg:min-h-[78vh] flex flex-col lg:flex-row items-center "
     >
       <div className="container mx-auto lg:p-40">
         <div>
