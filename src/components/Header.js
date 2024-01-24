@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/logo.png";
 export default function Header() {
   return (
-    <header className=" py-5  fixed w-full z-50 bg-gray-grain" id="header">
+    <header className=" py-5  fixed w-full z-[9999] bg-gray-grain" id="header">
       <div className="container mx-auto">
         <div className="flex justify-between  px-10 md:px-0 lg:px-0 items-center">
           <a href="#" className="text-gray-400 font-bold text-2xl">
