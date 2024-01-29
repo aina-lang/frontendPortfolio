@@ -59,7 +59,7 @@ body::-webkit-scrollbar-track {
   transform: translate(-30%, -30%);
   border-radius: 50%;
   background-color: #6365f1bb;
-  animation: blinkAnimation 1s infinite;
+  /* animation: blinkAnimation 1s infinite; */
   /* Add the animation */
 }
 

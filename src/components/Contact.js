@@ -132,7 +132,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: nameInView ? 1 : 0, y: nameInView ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl font-bold text-white mb-8"
+              className="text-4xl font-bold text-gray-500 mb-8"
             >
               Contact Me
             </motion.h2>
@@ -140,7 +140,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: nameInView ? 1 : 0, y: nameInView ? 0 : 20 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-white mb-8 text-lg max-w-md"
+              className="text-gray-400 mb-8 text-lg max-w-md"
             >
               If you want to get in touch with me, feel free to send me a
               message using the form below. I'll get back to you as soon as
@@ -192,7 +192,7 @@ export default function Contact() {
                   y: buttonInView ? 0 : 20,
                 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
-                className="bg-orange-400 hover:bg-orange-500 text-white py-2 px-4 rounded-lg transition-colors duration-300 ease-in-out"
+                className="bg-indigo-500 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition-colors duration-300 ease-in-out"
               >
                 Send Message
               </motion.button>

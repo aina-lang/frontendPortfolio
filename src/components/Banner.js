@@ -11,7 +11,7 @@ import aina from "../assets/aina.png";
 import { fadeIn } from "../constants/variants";
 import React, { useEffect } from "react";
 import { motion, useMotionValue, useAnimation } from "framer-motion";
-
+import  CV  from "../assets/aina.png";
 
 export default function Banner() {
 
@@ -22,11 +22,26 @@ export default function Banner() {
 
   useEffect(() => {
     controls.start({
-      y: [0, 20, 0, -20, 0], // Apply the floating effect to y-coordinate
+      y: [0, 20, 0, -20, 0],
       transition: { duration: 4, ease: "linear", repeat: Infinity },
     });
   }, [controls]);
 
+  const handleDownload = async () => {
+    await fetch('http://localhost:3000/index.js').then((response) => {
+      console.log("yesss");
+      if (response.status === 200 && response.headers.get('Content-Type').indexOf('application/octet-stream') != -1) {
+        const blob = new Blob([response.arrayBuffer()]);
+        console.log("yesss");
+        // saveAs(blob,'RAFANDEFERANA_MAMINIAINA_MERCIA_CV.pdf');
+
+      }else{
+        console.log(response.headers.get('Content-Type'));
+      }
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
   return (
     <section
       id="home"
@@ -40,7 +55,7 @@ export default function Banner() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.4 }}
-              className="mb-4 text-center text-[32px] text-gray-400 lg:text-left lg:text-[30px] font-secondary font-semibold uppercase leading-[1]"
+              className="mb-4 text-center text-[32px] text-gray-500 lg:text-left lg:text-[30px] font-secondary font-semibold uppercase leading-[1]"
             >
               RAFANDEFERANA{" "}
               <span className="text-indigo-500 ">MAMINIAINA MERCIA</span>
@@ -57,7 +72,7 @@ export default function Banner() {
                 speed={50}
                 repeat={Infinity}
                 wrapper="span"
-                className="text-[#8D7DFF] text-2xl "
+                className="text-orange-400 text-2xl "
               />
               <div className="relative mt-2 ">
                 <div className="line h-full hidden lg:flex w-1 absolute left-5 top-0 bg-gray-500 rounded-sm" />
@@ -76,10 +91,10 @@ export default function Banner() {
                   Contact me
                 </button>
 
-                <button className="text-lg font text-indigo-500 p-2 px-5 rounded-full hover:text-white group relative flex items-center overflow-hidden shadow-md border-2 border-white box-border hover:border-indigo-500">
-                  <span className="absolute left-0 w-0 h-full flex justify-center items-center transition-all bg-indigo-500 opacity-100 group-hover:w-full duration-200 ease box-border">
+                <button id="downloadCVbtn" className="text-lg font text-indigo-500 p-2 px-5 rounded-full hover:text-white group relative flex items-center overflow-hidden shadow-md border-2 border-white box-border hover:border-indigo-500">
+                  <a  href={CV} download="RAFANDEFERANA_MAMINIAINA_MERCIA_CV" onClick={handleDownload} className="absolute left-0 w-0 h-full flex justify-center items-center transition-all bg-indigo-500 opacity-100 group-hover:w-full duration-200 ease box-border">
                     <FaDownload className="relative" />
-                  </span>
+                  </a>
                   Download my CV
                 </button>
               </div>
@@ -99,12 +114,12 @@ export default function Banner() {
               />
             </motion.div>
             <div className="absolute h-[160px] w-[160px] top-0 left-0 bg-indigo-500 rounded-full mix-blend-multiply blur-[90px]"></div>
-            <div className="absolute h-[160px] w-[160px] right-0 bg-green-300 rounded-full mix-blend-multiply blur-[90px]"></div>
+            <div className="absolute h-[160px] w-[160px] right-0 bg-teal-500 rounded-full mix-blend-multiply blur-[90px]"></div>
             <div className="absolute h-[300px] w-[300px] top-0 bg-red-500 rounded-full mix-blend-multiply blur-[90px]"></div>
           </div>
         </div>
       </div>
-      <div className="fixed right-4 top-1/2 flex flex-col justify-between items-center text-[20px] gap-y-6 max-w-max mx-auto lg:mx-0 lg:top-1/3">
+      <div className="fixed right-4 z-50 top-1/2 flex flex-col justify-between items-center text-[20px] gap-y-6 max-w-max mx-auto lg:mx-0 lg:top-1/3">
         <a
           href="#"
           className="hover:text-indigo-500 transition-all duration-200 ease"
@@ -124,11 +139,6 @@ export default function Banner() {
           <FaFacebook />
         </a>
       </div>
-
-
-     
-
-
     </section>
   );
 }

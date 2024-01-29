@@ -27,7 +27,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="section min-h-screen lg:min-h-[78vh]  md:py-20 lg:py-32"
+      className="section min-h-screen lg:min-h-[78vh]  md:py-20 lg:py-32 relative"
     >
       <div className="container mx-auto lg:p-36">
         <motion.div
@@ -37,8 +37,8 @@ export default function Services() {
           whileInView={"show"}
           className="mb-10"
         >
-          <h2 className="h2 mb-6 text-2xl">What I DO </h2>
-          <h3 className="h3  mb-5 ">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-semibold text-gray-500">What <span className="text-indigo-500">I Do</span> </h2>
+          <h3 className="text-2xl text-gray-500 my-3 mb-5">
             I specialize in web, mobile, and desktop development, offering
             tailor-made solutions to meet the unique needs of my clients.
           </h3>
@@ -47,7 +47,7 @@ export default function Services() {
             animate={{ opacity: 1 }}
             whileInView={"show"}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-[#FB923C] px-8 py-2 rounded-full"
+            className="bg-indigo-500 px-8 py-2 rounded-full z-40"
           >
             See my work
           </motion.button>
@@ -59,14 +59,18 @@ export default function Services() {
           ))}
         </div>
       </div>
+      <div className="absolute h-[160px] w-[160px] top-0 left-[500px] bg-indigo-500 rounded-full mix-blend-multiply blur-[90px]"></div>
+      <div className="absolute h-[160px] w-[160px] right-24  bg-red-500/20 rounded-full mix-blend-multiply blur-[90px]"></div>
+      <div className="absolute h-[300px] w-[300px] top-[250px] bg-teal-500/30 rounded-full mix-blend-multiply blur-[90px]"></div>
+
     </section>
   );
 }
 
-// Composant pour la carte de service
+
 const ServiceCard = ({ service, index }) => {
   const [ref, inView] = useInView({
-    threshold: 0.5, // Vous pouvez ajuster le seuil en fonction de votre besoin
+    threshold: 0.5, 
   });
 
   return (
@@ -75,7 +79,7 @@ const ServiceCard = ({ service, index }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="bg-white rounded-lg p-6 shadow-md flex flex-col justify-between h-full"
+      className="bg-white rounded-lg p-6 shadow-md flex flex-col justify-between h-full z-40"
     >
       <div>
         <h3 className="text-2xl font-semibold mb-2 text-[#FB923C]">
@@ -84,7 +88,7 @@ const ServiceCard = ({ service, index }) => {
         <p className="text-lg mb-4 text-gray-500">{service.description}</p>
       </div>
       <div className="flex justify-center lg:justify-start">
-        <a href="#" className="text-blue-500">
+        <a href="#" className="text-indigo-500">
           {service.link}
         </a>
       </div>

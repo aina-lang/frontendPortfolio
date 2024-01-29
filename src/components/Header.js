@@ -5,7 +5,7 @@ export default function Header() {
     <header className=" py-5  fixed w-full z-[9999] bg-gray-grain" id="header">
       <div className="container mx-auto">
         <div className="flex justify-between  px-10 md:px-0 lg:px-0 items-center">
-          <a href="#" className="text-gray-400 font-bold text-2xl">
+          <a href="#" className="text-gray-500 font-bold text-2xl">
             {/* <img className="h-8" src={"Logo"} alt="ayna logo"/>
              */}
             AI<span className="text-[#6366f1]">NA</span>
